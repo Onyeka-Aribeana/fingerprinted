@@ -32,7 +32,7 @@ export const validateEmail = (value) => {
 
 export const fetchCourses = async () => {
   const response = await fetch(
-    "http://localhost/fingerprinted/api/courses/read_by_code.php"
+    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_by_code.php"
   );
   const data = await response.json();
   return data;
@@ -40,7 +40,7 @@ export const fetchCourses = async () => {
 
 export const fetchValidCourses = async () => {
   const response = await fetch(
-    "http://localhost/fingerprinted/api/courses/read_valid_code.php"
+    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_valid_code.php"
   );
   const data = await response.json();
   return data;
@@ -48,7 +48,7 @@ export const fetchValidCourses = async () => {
 
 export const fetchStudentPercentages = async () => {
   const response = await fetch(
-    "http://localhost/fingerprinted/api/attendance/student_percentages.php"
+    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/student_percentages.php"
   );
   const data = await response.json();
   return data;

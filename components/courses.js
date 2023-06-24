@@ -27,7 +27,7 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "http://localhost/fingerprinted/api/courses/read.php"
+    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read.php"
   );
   const data = await response.json();
   return data;
@@ -161,7 +161,7 @@ const Courses = () => {
 
     if (pass && addDept !== "Department") {
       const data = await makeAPIRequest(
-        "http://localhost/fingerprinted/api/courses/add_course.php",
+        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/add_course.php",
         {
           name: courseName.value,
           code: courseCode.value,
@@ -180,7 +180,7 @@ const Courses = () => {
 
   const deleteCourse = async () => {
     const data = await makeAPIRequest(
-      "http://localhost/fingerprinted/api/courses/delete_course.php",
+      "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/delete_course.php",
       {
         id: courseID,
       }
@@ -198,7 +198,7 @@ const Courses = () => {
     let pass = validateFields();
     if (pass && updatedDept !== "Department") {
       const data = await makeAPIRequest(
-        "http://localhost/fingerprinted/api/courses/update_course.php",
+        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/update_course.php",
         {
           id: courseID,
           name: courseName.value,

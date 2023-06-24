@@ -41,7 +41,7 @@ let daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
 
 export const fetchEvents = async () => {
   const response = await fetch(
-    "http://localhost/fingerprinted/api/events/read.php"
+    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/events/read.php"
   );
   const data = await response.json();
   return data;
@@ -220,7 +220,7 @@ export default function Calendar() {
         "id"
       ];
       const data = await makeAPIRequest(
-        "http://localhost/fingerprinted/api/events/add_event.php",
+        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/events/add_event.php",
         {
           description: desc.value,
           startDate: startDateInput.value,
@@ -270,7 +270,7 @@ export default function Calendar() {
       ];
 
       const data = await makeAPIRequest(
-        "http://localhost/fingerprinted/api/events/update_event.php",
+        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/events/update_event.php",
         {
           id: id,
           description: desc.value,
@@ -302,7 +302,7 @@ export default function Calendar() {
 
   const deleteEvent = async () => {
     const data = await makeAPIRequest(
-      "http://localhost/fingerprinted/api/events/delete_event.php",
+      "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/events/delete_event.php",
       {
         id: id,
       }
