@@ -27,7 +27,10 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;

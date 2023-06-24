@@ -39,7 +39,10 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;
@@ -146,7 +149,10 @@ const Students = () => {
     async function fetchDevices() {
       // Creating an async function for fetching
       const response = await fetch(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read_all.php"
+        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read_all.php",
+        {
+          mode: "no-cors",
+        }
       );
       const data = await response.json();
       setDeviceOptions(data.data);
@@ -165,7 +171,10 @@ const Students = () => {
 
   const fetchSingleStudent = async (id) => {
     const res = await fetch(
-      `https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read_single.php?id=${id}`
+      `https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read_single.php?id=${id}`,
+      {
+        mode: "no-cors",
+      }
     );
     return res.json();
   };

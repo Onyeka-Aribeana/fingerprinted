@@ -36,7 +36,10 @@ import BarChart from "../components/BarChart";
 
 const fetcher = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/read.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/read.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;
@@ -44,7 +47,10 @@ const fetcher = async () => {
 
 const recent_fetcher = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/recent_reports.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/recent_reports.php",
+    {
+      mode: "no-cors",
+    }
   );
 
   const data = await response.json();
@@ -53,7 +59,10 @@ const recent_fetcher = async () => {
 
 const fetch_rates = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_rates.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_rates.php",
+    {
+      mode: "no-cors",
+    }
   );
 
   const data = await response.json();

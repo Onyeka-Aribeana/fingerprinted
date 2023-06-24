@@ -26,7 +26,10 @@ import { GoSearch } from "react-icons/go";
 export const fetchDevices = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;

@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 
 export const makeAPIRequest = async (url, body) => {
   const res = await fetch(url, {
+    mode: 'no-cors',
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +33,10 @@ export const validateEmail = (value) => {
 
 export const fetchCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_by_code.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_by_code.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;
@@ -40,7 +44,10 @@ export const fetchCourses = async () => {
 
 export const fetchValidCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_valid_code.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_valid_code.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;
@@ -48,7 +55,10 @@ export const fetchValidCourses = async () => {
 
 export const fetchStudentPercentages = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/student_percentages.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/student_percentages.php",
+    {
+      mode: "no-cors",
+    }
   );
   const data = await response.json();
   return data;
