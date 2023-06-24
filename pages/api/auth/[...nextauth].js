@@ -10,18 +10,18 @@ export default NextAuth({
       type: "credentials",
       credentials: {},
       async authorize(credentials, req) {
-        const res = await fetch(
-          "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/admin/login.php",
-          {
-            mode: "no-cors",
-            method: "POST",
-            body: JSON.stringify(credentials),
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+        // const res = await fetch(
+        //   "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/admin/login.php",
+        //   {
+        //     mode: "no-cors",
+        //     method: "POST",
+        //     body: JSON.stringify(credentials),
+        //     headers: { "Content-Type": "application/json" },
+        //   }
+        // );
 
         //const user = await res.json();
-        user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
+        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
 
         if (user && user["error"]) {
           throw new Error(user["error"]);
