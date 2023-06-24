@@ -36,7 +36,7 @@ import BarChart from "../components/BarChart";
 
 const fetcher = async () => {
   const response = await fetch(
-    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/read.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/read.php"
   );
   const data = await response.json();
   return data;
@@ -44,7 +44,7 @@ const fetcher = async () => {
 
 const recent_fetcher = async () => {
   const response = await fetch(
-    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/recent_reports.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/recent_reports.php"
   );
 
   const data = await response.json();
@@ -53,7 +53,7 @@ const recent_fetcher = async () => {
 
 const fetch_rates = async () => {
   const response = await fetch(
-    "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_rates.php"
+    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_rates.php"
   );
 
   const data = await response.json();
@@ -264,7 +264,7 @@ const Attendance = () => {
       ];
 
       const data = await makeAPIRequest(
-        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/attendance_rates.php",
+        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/attendance_rates.php",
         {
           course: id,
           attendance_rate: attendance_rate,
@@ -293,7 +293,7 @@ const Attendance = () => {
       ];
 
       const data = await makeAPIRequest(
-        "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_report.php",
+        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/generate_report.php",
         {
           date: dateInput.value,
           course: id,
@@ -357,7 +357,7 @@ const Attendance = () => {
 
   const downloadRecentReport = async (lecture) => {
     const data = await makeAPIRequest(
-      "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/export_to_excel.php",
+      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/export_to_excel.php",
       lecture
     );
     downloadReport(data["data"], lecture);

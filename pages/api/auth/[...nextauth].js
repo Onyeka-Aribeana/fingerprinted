@@ -11,7 +11,7 @@ export default NextAuth({
       credentials: {},
       async authorize(credentials, req) {
         const res = await fetch(
-          "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/admin/login.php",
+          "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/admin/login.php",
           {
             method: "POST",
             body: JSON.stringify(credentials),

@@ -20,7 +20,7 @@ const Student = () => {
 
   const fetchID = async (matric) => {
     const response = await makeAPIRequest(
-      "http://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/get_id.php",
+      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/get_id.php",
       { matric_no: matric }
     );
     setId(response);
