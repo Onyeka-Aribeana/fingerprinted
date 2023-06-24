@@ -21,10 +21,11 @@ export default NextAuth({
         );
 
         const user = await res.json();
-        if (user["error"]) {
+        if (user && user["error"]) {
           throw new Error(user["error"]);
+        } else if (user && !user['error']) {
+          return user;
         }
-        return user;
       },
     }),
   ],
