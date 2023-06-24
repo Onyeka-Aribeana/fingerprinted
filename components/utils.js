@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 export const makeAPIRequest = async (url, body) => {
   const res = await fetch(url, {
-    mode: 'no-cors',
+    mode: "no-cors",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const validateEmail = (value) => {
 
 export const fetchCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_by_code.php",
+    "https://fingerprinted1.000webhostapp.com/api/courses/read_by_code.php",
     {
       mode: "no-cors",
     }
@@ -44,7 +44,7 @@ export const fetchCourses = async () => {
 
 export const fetchValidCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/courses/read_valid_code.php",
+    "https://fingerprinted1.000webhostapp.com/api/courses/read_valid_code.php",
     {
       mode: "no-cors",
     }
@@ -55,7 +55,7 @@ export const fetchValidCourses = async () => {
 
 export const fetchStudentPercentages = async () => {
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/attendance/student_percentages.php",
+    "https://fingerprinted1.000webhostapp.com/api/attendance/student_percentages.php",
     {
       mode: "no-cors",
     }

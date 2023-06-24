@@ -15,7 +15,7 @@ const ViewData = ({ id }) => {
 
   const fetchData = async (id) => {
     const response = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/get_student_data.php",
+      "https://fingerprinted1.000webhostapp.com/api/students/get_student_data.php",
       { id: id }
     );
     setData(response);

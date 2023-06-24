@@ -11,7 +11,7 @@ export default NextAuth({
       credentials: {},
       async authorize(credentials, req) {
         // const res = await fetch(
-        //   "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/admin/login.php",
+        //   "https://fingerprinted1.000webhostapp.com/api/admin/login.php",
         //   {
         //     mode: "no-cors",
         //     method: "POST",

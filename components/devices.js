@@ -26,7 +26,7 @@ import { GoSearch } from "react-icons/go";
 export const fetchDevices = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read.php",
+    "https://fingerprinted1.000webhostapp.com/api/devices/read.php",
     {
       mode: "no-cors",
     }
@@ -114,7 +114,7 @@ const Devices = () => {
       setNameHelper({ text: "", color: "secondary" });
 
       const data = await makeAPIRequest(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/add_device.php",
+        "https://fingerprinted1.000webhostapp.com/api/devices/add_device.php",
         {
           name: deviceName.value,
         }
@@ -132,7 +132,7 @@ const Devices = () => {
 
   const deleteDevice = async () => {
     const data = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/delete_device.php",
+      "https://fingerprinted1.000webhostapp.com/api/devices/delete_device.php",
       {
         id: deviceID,
       }
@@ -150,7 +150,7 @@ const Devices = () => {
       setNameHelper({ text: "", color: "secondary" });
 
       const data = await makeAPIRequest(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/update_device.php",
+        "https://fingerprinted1.000webhostapp.com/api/devices/update_device.php",
         {
           id: deviceID,
           name: deviceName.value,
@@ -170,7 +170,7 @@ const Devices = () => {
 
   const switchMode = async (id, mode) => {
     const data = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/switch_mode.php",
+      "https://fingerprinted1.000webhostapp.com/api/devices/switch_mode.php",
       {
         id: id,
         mode: mode,

@@ -39,7 +39,7 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read.php",
+    "https://fingerprinted1.000webhostapp.com/api/students/read.php",
     {
       mode: "no-cors",
     }
@@ -149,7 +149,7 @@ const Students = () => {
     async function fetchDevices() {
       // Creating an async function for fetching
       const response = await fetch(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/devices/read_all.php",
+        "https://fingerprinted1.000webhostapp.com/api/devices/read_all.php",
         {
           mode: "no-cors",
         }
@@ -171,7 +171,7 @@ const Students = () => {
 
   const fetchSingleStudent = async (id) => {
     const res = await fetch(
-      `https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/read_single.php?id=${id}`,
+      `https://fingerprinted1.000webhostapp.com/api/students/read_single.php?id=${id}`,
       {
         mode: "no-cors",
       }
@@ -254,7 +254,7 @@ const Students = () => {
       }
 
       const data = await makeAPIRequest(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/add_student.php",
+        "https://fingerprinted1.000webhostapp.com/api/students/add_student.php",
         {
           first_name: firstName.value,
           last_name: lastName.value,
@@ -287,7 +287,7 @@ const Students = () => {
 
   const deleteStudent = async () => {
     const data = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/delete_student.php",
+      "https://fingerprinted1.000webhostapp.com/api/students/delete_student.php",
       {
         id: studentID,
       }
@@ -345,7 +345,7 @@ const Students = () => {
           .filter((course) => course.id);
       }
       const data = await makeAPIRequest(
-        "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/update_student.php",
+        "https://fingerprinted1.000webhostapp.com/api/students/update_student.php",
         {
           id: studentID,
           first_name: firstName.value,
@@ -371,7 +371,7 @@ const Students = () => {
   const addFinger = async (id) => {
     setStudentID(id);
     const data = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/add_fingerprint.php",
+      "https://fingerprinted1.000webhostapp.com/api/students/add_fingerprint.php",
       {
         id: id,
       }
@@ -395,7 +395,7 @@ const Students = () => {
 
   const cancelAddFinger = async (id) => {
     const data = await makeAPIRequest(
-      "https://fingerprinted.infinityfreeapp.com/fingerprinted/api/students/cancel_add.php",
+      "https://fingerprinted1.000webhostapp.com/api/students/cancel_add.php",
       {
         id: id,
       }
