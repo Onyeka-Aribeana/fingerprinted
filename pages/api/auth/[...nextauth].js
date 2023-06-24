@@ -20,7 +20,7 @@ export default NextAuth({
           }
         );
 
-        const user = await res.json();
+        //const user = await res.json();
         user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
 
         if (user && user["error"]) {
