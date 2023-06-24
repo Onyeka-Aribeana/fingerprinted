@@ -25,7 +25,6 @@ import InputField from "./InputField";
 import "react-toastify/dist/ReactToastify.css";
 
 const fetcher = async () => {
-  // function to fetch device list from database
   const response = await fetch(
     "https://fingerprinted1.000webhostapp.com/api/courses/read.php",
     {
