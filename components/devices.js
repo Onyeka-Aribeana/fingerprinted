@@ -26,10 +26,7 @@ import { GoSearch } from "react-icons/go";
 export const fetchDevices = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/devices/read.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/devices/read.php"
   );
   const data = await response.json();
   return data;
@@ -37,9 +34,7 @@ export const fetchDevices = async () => {
 
 const Devices = () => {
   // client-side fetching method using swr
-  const { data, error } = useSWR("devices", fetchDevices, {
-    refreshInterval: 5000,
-  });
+  const { data, error } = useSWR("devices", fetchDevices);
 
   const [header, setHeader] = useState("");
   const deviceModal = useModal();

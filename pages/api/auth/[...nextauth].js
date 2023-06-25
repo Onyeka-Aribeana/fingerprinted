@@ -13,7 +13,6 @@ export default NextAuth({
         const res = await fetch(
           "https://fingerprinted1.000webhostapp.com/api/admin/login.php",
           {
-            mode: "no-cors",
             method: "POST",
             body: JSON.stringify(credentials),
             headers: { "Content-Type": "application/json" },

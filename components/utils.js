@@ -2,10 +2,9 @@ import { toast } from "react-toastify";
 
 export const makeAPIRequest = async (url, body) => {
   const res = await fetch(url, {
-    mode: "no-cors",
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "text/plain",
     },
     body: JSON.stringify(body),
   });
@@ -20,7 +19,7 @@ export const showNotification = (data) => {
     });
     return;
   } else if (data["success"]) {
-    toast.success(data["success"], {
+    toast.success(data.success, {
       position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
     });
@@ -33,10 +32,7 @@ export const validateEmail = (value) => {
 
 export const fetchCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/courses/read_by_code.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/courses/read_by_code.php"
   );
   const data = await response.json();
   return data;
@@ -44,10 +40,7 @@ export const fetchCourses = async () => {
 
 export const fetchValidCourses = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/courses/read_valid_code.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/courses/read_valid_code.php"
   );
   const data = await response.json();
   return data;
@@ -55,10 +48,7 @@ export const fetchValidCourses = async () => {
 
 export const fetchStudentPercentages = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/attendance/student_percentages.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/attendance/student_percentages.php"
   );
   const data = await response.json();
   return data;

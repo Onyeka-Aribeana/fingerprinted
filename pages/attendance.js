@@ -36,10 +36,7 @@ import BarChart from "../components/BarChart";
 
 const fetcher = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/attendance/read.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/attendance/read.php"
   );
   const data = await response.json();
   return data;
@@ -47,10 +44,7 @@ const fetcher = async () => {
 
 const recent_fetcher = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/attendance/recent_reports.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/attendance/recent_reports.php"
   );
 
   const data = await response.json();
@@ -59,10 +53,7 @@ const recent_fetcher = async () => {
 
 const fetch_rates = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/attendance/generate_rates.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/attendance/generate_rates.php"
   );
 
   const data = await response.json();
@@ -71,9 +62,7 @@ const fetch_rates = async () => {
 
 const Attendance = () => {
   // client-side fetching method using swr
-  const { data, error } = useSWR("attendance_list", fetcher, {
-    refreshInterval: 1000,
-  });
+  const { data, error } = useSWR("attendance_list", fetcher);
   const recent_reports = useSWR("recent_reports", recent_fetcher);
   const courses = useSWR("courses", fetchValidCourses);
   const attendance_rates = useSWR("rates", fetch_rates);
@@ -569,7 +558,11 @@ const Attendance = () => {
                       </Box>
                     </Box>
                   ))}
-                {!recent_reports.data && <LoadingPoints />}
+                {!recent_reports.data && (
+                  <Box css={{ textAlign: "center" }}>
+                    <Loading color="secondary" type="points" size="xl" />
+                  </Box>
+                )}
                 {recent_reports?.data?.error && (
                   <Box css={{ textAlign: "center" }}>
                     <Text css={{ color: "$accents6" }}>

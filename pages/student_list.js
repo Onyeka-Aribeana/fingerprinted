@@ -39,10 +39,7 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   // function to fetch device list from database
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/students/read.php",
-    {
-      mode: "no-cors",
-    }
+    "https://fingerprinted1.000webhostapp.com/api/students/read.php"
   );
   const data = await response.json();
   return data;
@@ -50,12 +47,8 @@ const fetcher = async () => {
 
 const Students = () => {
   // client-side fetching method using swr
-  const { data, error } = useSWR("student_list", fetcher, {
-    refreshInterval: 5000,
-  });
-  const all_courses = useSWR("courses", fetchValidCourses, {
-    refreshInterval: 1000,
-  });
+  const { data, error } = useSWR("student_list", fetcher);
+  const all_courses = useSWR("courses", fetchValidCourses);
 
   const [header, setHeader] = useState("");
   const studentModal = useModal();
@@ -149,10 +142,7 @@ const Students = () => {
     async function fetchDevices() {
       // Creating an async function for fetching
       const response = await fetch(
-        "https://fingerprinted1.000webhostapp.com/api/devices/read_all.php",
-        {
-          mode: "no-cors",
-        }
+        "https://fingerprinted1.000webhostapp.com/api/devices/read_all.php"
       );
       const data = await response.json();
       setDeviceOptions(data.data);
@@ -171,10 +161,7 @@ const Students = () => {
 
   const fetchSingleStudent = async (id) => {
     const res = await fetch(
-      `https://fingerprinted1.000webhostapp.com/api/students/read_single.php?id=${id}`,
-      {
-        mode: "no-cors",
-      }
+      `https://fingerprinted1.000webhostapp.com/api/students/read_single.php?id=${id}`
     );
     return res.json();
   };

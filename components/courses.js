@@ -27,9 +27,6 @@ import "react-toastify/dist/ReactToastify.css";
 const fetcher = async () => {
   const response = await fetch(
     "https://fingerprinted1.000webhostapp.com/api/courses/read.php",
-    {
-      mode: "no-cors",
-    }
   );
   const data = await response.json();
   return data;
@@ -37,7 +34,7 @@ const fetcher = async () => {
 
 const Courses = () => {
   // client-side fetching method using swr
-  const { data, error } = useSWR("classes", fetcher, { refreshInterval: 5000 });
+  const { data, error } = useSWR("classes", fetcher);
 
   const [header, setHeader] = useState("");
   const courseModal = useModal();

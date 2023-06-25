@@ -42,22 +42,15 @@ let daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
 export const fetchEvents = async () => {
   const response = await fetch(
     "https://fingerprinted1.000webhostapp.com/api/events/read.php",
-    {
-      mode: "no-cors",
-    }
   );
   const data = await response.json();
   return data;
 };
 
 export default function Calendar() {
-  const { data, error } = useSWR("events", fetchEvents, {
-    refreshInterval: 5000,
-  });
+  const { data, error } = useSWR("events", fetchEvents);
 
-  const courses = useSWR("courses", fetchCourses, {
-    refreshInterval: 1000,
-  });
+  const courses = useSWR("courses", fetchCourses);
 
   let events = data?.data;
 
