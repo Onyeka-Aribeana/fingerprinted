@@ -186,13 +186,15 @@ const Students = () => {
       : setCourses(new Set([courseOptions[0]["name"]]));
   };
 
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   const validateFields = () => {
     let valid = true;
     if (firstName.value === "") {
       setFirstHelper({ text: "Please enter first name", color: "error" });
       valid = false;
     }
-    if (firstName.value === "") {
+    if (lastName.value === "") {
       setLastHelper({ text: "Please enter last name", color: "error" });
       valid = false;
     }
@@ -371,6 +373,7 @@ const Students = () => {
       while (isAdded == 1) {
         const data = await fetchSingleStudent(id);
         isAdded = data["add_fingerid"];
+        sleep(20000);
       }
 
       if (flag) {
@@ -415,9 +418,9 @@ const Students = () => {
         return (
           <Col>
             <Text>
-              {data.fingerprint_id === 0 && data.add_fingerid === 0
+              {data.fingerprint_id == 0 && data.add_fingerid == 0
                 ? "Not added"
-                : data.fingerprint_id >= 0 && data.add_fingerid === 1
+                : data.fingerprint_id >= 0 && data.add_fingerid == 1
                 ? "Adding"
                 : "Added"}
             </Text>

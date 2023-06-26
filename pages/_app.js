@@ -3,6 +3,7 @@ import { createTheme, NextUIProvider, useSSR } from "@nextui-org/react";
 import { SessionProvider } from "next-auth/react";
 import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
+import { SWRConfig } from "swr";
 
 const StyledToastContainer = styled(ToastContainer)`
   &&&.Toastify__toast-container {
@@ -91,10 +92,12 @@ function MyApp({ Component, pageProps }) {
   return (
     isBrowser && (
       <SessionProvider session={pageProps.session}>
-        <NextUIProvider theme={myTheme}>
-          <StyledToastContainer />
-          <Component {...pageProps} />
-        </NextUIProvider>
+        <SWRConfig>
+          <NextUIProvider theme={myTheme}>
+            <StyledToastContainer />
+            <Component {...pageProps} />
+          </NextUIProvider>
+        </SWRConfig>
       </SessionProvider>
     )
   );

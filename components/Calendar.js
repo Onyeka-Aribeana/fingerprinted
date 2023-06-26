@@ -41,7 +41,7 @@ let daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
 
 export const fetchEvents = async () => {
   const response = await fetch(
-    "https://fingerprinted1.000webhostapp.com/api/events/read.php",
+    "https://fingerprinted1.000webhostapp.com/api/events/read.php"
   );
   const data = await response.json();
   return data;

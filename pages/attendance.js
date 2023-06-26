@@ -439,7 +439,7 @@ const Attendance = () => {
         {data?.data &&
           data.data.map((lecture, id) => (
             <Box key={lecture["lecture_id"]} css={{ mb: "0.5rem" }}>
-              {id === 0 && (
+              {id == 0 && (
                 <>
                   <Box
                     css={{

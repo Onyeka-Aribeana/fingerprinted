@@ -78,6 +78,7 @@ const Devices = () => {
   useEffect(() => {
     setFilteredData(data?.data);
     if (selected.currentKey) {
+      console.log(data?.data);
       handleFilterChange(data?.data, selected.currentKey);
     }
   }, [data]);
@@ -181,9 +182,9 @@ const Devices = () => {
       case "mode":
         return (
           <Col css={{ d: "flex", ai: "center" }}>
-            <Tooltip content={data.mode !== 0 ? "Switch to Attendance" : ""}>
+            <Tooltip content={data.mode != 0 ? "Switch to Attendance" : ""}>
               <Button
-                bordered={data.mode !== 0}
+                bordered={data.mode != "0"}
                 size="sm"
                 color="primary"
                 auto
@@ -193,7 +194,7 @@ const Devices = () => {
                   outline: "none",
                 }}
                 onPress={() => {
-                  if (data.mode !== 0) {
+                  if (data.mode != 0) {
                     switchMode(data.key, data.mode);
                   }
                 }}
@@ -201,9 +202,9 @@ const Devices = () => {
                 Att.
               </Button>
             </Tooltip>
-            <Tooltip content={data.mode !== 1 ? "Switch to Enrollment" : ""}>
+            <Tooltip content={data.mode != 1 ? "Switch to Enrollment" : ""}>
               <Button
-                bordered={data.mode !== 1}
+                bordered={data.mode != "1"}
                 size="sm"
                 color="primary"
                 auto
@@ -213,7 +214,7 @@ const Devices = () => {
                   outline: "none",
                 }}
                 onPress={() => {
-                  if (data.mode !== 1) {
+                  if (data.mode != 1) {
                     switchMode(data.key, data.mode);
                   }
                 }}
